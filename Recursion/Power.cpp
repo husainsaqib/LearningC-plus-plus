@@ -8,9 +8,6 @@ int power(int n,int e)
       return sum;
     sum=sum+n*n;
     power(n,e-1);
-    
-
-    
 }
 int main()
 { int num,pow;

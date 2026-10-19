@@ -1,0 +1,36 @@
+
+#include <iostream>
+using namespace std;
+
+void TOH(int n, char src,
+                  char aux, char dest)
+{
+    if (n == 1)
+    {
+        cout << "Move disk 1 from "
+             << src << " to " << dest << endl;
+        return;
+    }
+    TOH(n - 1, src, dest, aux);
+    cout << "Move disk " << n << " from "
+         << src << " to " << dest << endl;
+    TOH(n - 1, aux, src, dest);
+}
+
+int main()
+{
+    int n;
+
+    cout << "Enter number of disks: ";
+    cin >> n;
+
+    if (n <= 0)
+    {
+        cout << "Enter a positive number of disks.";
+        return 0;
+    }
+
+    TOH(n, 'A', 'B', 'C');
+
+    return 0;
+}
